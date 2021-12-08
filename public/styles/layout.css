@@ -43,8 +43,11 @@ body {
   border-right: none;
   border-bottom: solid 3px;
   columns: 80;
-  font-size: 25px;
+  font-size: 15px;
+  width: 450px;
+  min-height: 40px;
 }
+
 
 .new-tweet {
   display: flex;
@@ -85,4 +88,8 @@ textarea {
 .form-footer output {
   font-size: medium;
   font-family:  'Bungee', cursive;
+}
+
+#counter.red {
+  color: red;
 }
