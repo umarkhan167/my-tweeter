@@ -1,0 +1,25 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #0064de;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header div .avatar {
+  height: auto;
+  width: 150px;
+}
+
+header div img {
+  width: 150px;
+  margin-top: 30px;
+}
+
+header div h4 {
+  color: white;
+  margin: auto;
+}
