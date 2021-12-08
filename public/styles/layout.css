@@ -28,6 +28,61 @@ body {
  main {
   width: 90%;
   margin: auto;
-  text-align: center;
+  /* text-align: center; */
   background-color: #f4f1ec;
  }
+
+ .new-tweet form label {
+  font-size: 25px;
+}
+
+.new-tweet form textarea {
+  background-color: #f4f1ec;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 3px;
+  columns: 80;
+  font-size: 25px;
+}
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-tweet label {
+  margin-right: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.form-footer button {
+  font-size: small;
+  color: white;
+  font-family:  'Bungee', cursive;
+  border: none;
+  padding: 5px;
+  background-color: #4056A1;
+}
+
+.form-footer output {
+  font-size: medium;
+  font-family:  'Bungee', cursive;
+}

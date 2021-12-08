@@ -53,12 +53,17 @@
     </header>
     <main>
       <h1>
-        Tweeter is awesome!
-      </h1>
-      <h2>
-        Yeehaw, i love Tweeter!
-      </h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam amet consequuntur sit temporibus alias repellat doloribus labore placeat natus harum id iusto maiores, autem assumenda delectus nostrum libero quasi facilis.</p>
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form method="POST" action="/tweets/">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" cols="40" rows="1"></textarea>
+            <div class="form-footer">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
     </main>
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
