@@ -36,8 +36,7 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
-    
+<!-- NAV menu -->
     <nav>
       <span>tweeter</span>
       <div>
@@ -45,31 +44,70 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
+<!-- HEADER profile -->
     <header>
       <div class="avatar">
           <img src="/images/profile-hex.png"> 
       </div>
-      <!-- <br> -->
       <div class="name">
           <h4>Your Name</h4>
       </div>
     </header>
+
     <main>
-      <h1>
+<!-- NEW TWEET -->
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
           <form method="POST" action="/tweets">
             <label for="tweet-text">What are you humming about?</label>
             <textarea id="tweet-area" name="text" id="tweet-text" cols="40" rows="1"></textarea>
-            <!-- <p>
-              <span class="textarea" role="textbox" contenteditable></span>
-            </p>
-             -->
             <div class="form-footer">
               <button type="submit">Tweet</button>
               <output name="counter" id="counter" for="tweet-text">140</output>
             </div>
           </form>
+        </section>
+<!-- POSTED TWEETS -->
+        <section id="tweets-container">
+
+          <article class="posted-tweet">
+            <div class="tweet-header">
+              <div class="" >
+                <i class="far fa-user"></i>
+                <span>Newton</span>
+              </div>              
+              <p><a href="#">@SirIsaac</a></p>
+            </div>
+            <h4>If I have seen further it is by standing on the shoulders of giants</h4>
+            <div class="tweet-footer">
+              <span>10 days ago</span>
+              <div class="tweet-icons">              
+                <i class="fas fa-flag"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="posted-tweet">
+            <div class="tweet-header">
+              <div class="" >
+                <i class="far fa-user"></i>
+                <span>Rhoda Jacobs</span>
+              </div>              
+              <p><a href="#">@MrsJacobs</a></p>
+            </div>
+            <h4>Hello world</h4>
+            <div class="tweet-footer">
+              <span>10 days ago</span>
+              <div class="tweet-icons">              
+                <i class="fas fa-flag"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+          </article>
+
         </section>
     </main>
     <!-- Page-specific (main) content here -->
