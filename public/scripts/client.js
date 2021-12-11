@@ -64,12 +64,29 @@ $(document).ready(function() {
     }
   }
   
+  function tweetValidation(tweetText) {
+    if (!tweetText) {
+      alert("Please enter tweet message.")
+      return false
+    } else if (tweetText.length > 140) {
+      alert("Tweet message too long. Please shorten.")
+      return false
+    } else {
+      return true
+    }
+  }
+
   $("form").submit(function(event) {
     event.preventDefault();
-    const query = $(this).serialize();
-    $.post("/tweets", query).then(function(res){
+    const tweet = $("#tweet-area").val();
+    const isValid = tweetValidation(tweet);
+    if (isValid) {
+      const query = $(this).serialize();
+      $.post("/tweets", query).then(function(res){
       console.log(res, "Response is working");
-    });
+      });
+    }
+
   })
 
   function loadTweets() {
