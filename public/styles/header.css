@@ -23,3 +23,7 @@ header div h4 {
   color: white;
   margin: auto;
 }
+
+header div a {
+  font-weight: lighter;
+}

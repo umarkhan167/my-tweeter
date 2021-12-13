@@ -53,9 +53,6 @@ function createTweetElement(tweetObject) {
     return tweet
 }
 
-
-
-
 $(document).ready(function() {
   function renderTweets(tweetsData) {
     for (let tweet of tweetsData) {
@@ -83,15 +80,14 @@ $(document).ready(function() {
     if (isValid) {
       const query = $(this).serialize();
       $.post("/tweets", query).then(function(res){
-      console.log(res, "Response is working");
+         console.log(res, "Response is working");location.reload();
       });
     }
-
   })
 
   function loadTweets() {
     $.getJSON("/tweets", {}, function(res) {
-      renderTweets(res);
+      renderTweets(res.reverse());
       console.log("GET request successfull!");
     })
   }
