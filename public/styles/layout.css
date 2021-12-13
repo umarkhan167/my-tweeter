@@ -37,6 +37,7 @@ body {
  .new-tweet form label {
   font-size: 20px;
   font-weight: bold;
+  margin-top: 30px;
 }
 
 .new-tweet form textarea {
@@ -47,7 +48,7 @@ body {
   border-bottom: solid 3px;
   columns: 80;
   font-size: 15px;
-  width: 450px;
+  width: 500px;
   min-height: 30px;
 }
 
@@ -97,7 +98,27 @@ textarea {
   color: red;
 }
 
-/* All Article tag stylings: */
+/* Error message styling */
+.error-msg {
+  border: 5px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  margin: 30px;
+  padding: 20px;
+  color: red;
+  font-weight: lighter;
+}
+
+.error-msg p {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+/* All Posted tweets stylings: */
 .posted-tweet {
   border: black 3px solid;
   margin-top: 50px;
@@ -151,7 +172,7 @@ textarea {
   color: #4056A1;
 }
 
-.tweet-icons:hover {
+.tweet-icons i:hover {
   transition: 0.3s;
   color: goldenrod;
 }

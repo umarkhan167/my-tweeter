@@ -4,34 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
-// {/* <img src=${user.avatars}/> */}
 function createTweetElement(tweetObject) {
-    const {user, content, created_at} = tweetObject
+    const {user, content, created_at} = tweetObject;
+    const contentText = escape(content.text)
+
     const tweet = `<article class="posted-tweet">
                     <div class="tweet-header">
                       <div class="tweet-header-left">
@@ -40,7 +22,7 @@ function createTweetElement(tweetObject) {
                       </div>              
                       <p><a href="#">${user.handle}</a></p>
                     </div>
-                    <h4>${content.text}</h4>
+                    <h4>${contentText}</h4>
                     <div class="tweet-footer">
                       <span>${timeago.format(new Date())}</span>
                       <div class="tweet-icons">              
@@ -54,6 +36,7 @@ function createTweetElement(tweetObject) {
 }
 
 $(document).ready(function() {
+  $(".error-msg").hide();
   function renderTweets(tweetsData) {
     for (let tweet of tweetsData) {
       const postedTweet = createTweetElement(tweet);
@@ -63,12 +46,11 @@ $(document).ready(function() {
   
   function tweetValidation(tweetText) {
     if (!tweetText) {
-      alert("Please enter tweet message.")
-      return false
+      $(".error-msg").slideDown();
     } else if (tweetText.length > 140) {
-      alert("Tweet message too long. Please shorten.")
-      return false
+      $(".error-msg").slideDown();
     } else {
+      $(".error-msg").hide();
       return true
     }
   }
@@ -80,14 +62,17 @@ $(document).ready(function() {
     if (isValid) {
       const query = $(this).serialize();
       $.post("/tweets", query).then(function(res){
-         console.log(res, "Response is working");location.reload();
+         console.log(res, "Response is working");
+         loadTweets();
       });
     }
   })
 
   function loadTweets() {
     $.getJSON("/tweets", {}, function(res) {
+      $(".posted-tweet").remove();
       renderTweets(res.reverse());
+      $("#tweet-area").val("");
       console.log("GET request successfull!");
     })
   }

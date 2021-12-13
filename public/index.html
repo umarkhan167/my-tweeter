@@ -60,7 +60,13 @@
     <main>
 <!-- NEW TWEET -->
         <section class="new-tweet">
-          <h2>Compose Tweet</h2>
+
+          <div class="error-msg">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p> Please do not leave form blank or exceed arbitrary 140 character limit. </p>
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+
           <form id="tweet-submission" method="POST" action="/tweets">
             <label for="tweet-text">What are you humming about?</label>
             <textarea id="tweet-area" name="text" cols="40" rows="1"></textarea>
@@ -69,6 +75,8 @@
               <output name="counter" id="counter" for="tweet-text">140</output>
             </div>
           </form>
+
+ 
         </section>
 <!-- POSTED TWEETS -->
         <section id="tweets-container">
