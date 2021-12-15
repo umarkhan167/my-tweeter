@@ -47,11 +47,9 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-<!-- HEADER profile -->
-    
 
     <main>
-<!-- NEW TWEET -->
+<!-- HEADER profile --> 
     <header>
       <div class="avatar">
           <img src="/images/profile-hex.png"> 
@@ -60,7 +58,9 @@
           <h4>Amy<a> Mansell</a></h4>
       </div>
     </header>
+
       <div class="all-things-tweet">
+        
         <section class="new-tweet">
 
           <div class="error-msg">
@@ -68,7 +68,7 @@
             <p> Please do not leave form blank or exceed arbitrary 140 character limit. </p>
             <i class="fas fa-exclamation-triangle"></i>
           </div>
-
+<!--CREATE NEW TWEET FORM-->
           <form id="tweet-submission" method="POST" action="/tweets">
             <label for="tweet-text">What are you humming about?</label>
             <textarea id="tweet-area" name="text" cols="40" rows="1"></textarea>
@@ -77,15 +77,12 @@
               <output name="counter" id="counter" for="tweet-text">140</output>
             </div>
           </form>
-      
+  
         </section>
-<!-- POSTED TWEETS -->
+<!-- ALL POSTED TWEETS -->
         <section id="tweets-container">
         </section>
       </div>
     </main>
-
-    <!-- Page-specific (main) content here -->
-    <!-- <main class="container"></main> -->
   </body>
 </html>

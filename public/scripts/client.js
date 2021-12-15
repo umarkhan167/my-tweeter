@@ -10,6 +10,7 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
+//Generates html layout for each tweet
 function createTweetElement(tweetObject) {
     const {user, content, created_at} = tweetObject;
     const contentText = escape(content.text)
@@ -37,13 +38,15 @@ function createTweetElement(tweetObject) {
 
 $(document).ready(function() {
   $(".error-msg").hide();
+
+  //Renders tweets that are submitted to the page
   function renderTweets(tweetsData) {
     for (let tweet of tweetsData) {
       const postedTweet = createTweetElement(tweet);
       $("#tweets-container").append(postedTweet);
     }
   }
-  
+  //Error handling for incorrect form submissions
   function tweetValidation(tweetText) {
     if (!tweetText) {
       $(".error-msg").slideDown();
@@ -54,7 +57,7 @@ $(document).ready(function() {
       return true
     }
   }
-
+//Ajax request in form submission to load tweet asynchronously 
   $("form").submit(function(event) {
     event.preventDefault();
     const tweet = $("#tweet-area").val();
@@ -67,7 +70,7 @@ $(document).ready(function() {
       });
     }
   })
-
+//renders tweets from JSON in /tweets url
   function loadTweets() {
     $.getJSON("/tweets", {}, function(res) {
       $(".posted-tweet").remove();

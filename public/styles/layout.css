@@ -29,7 +29,6 @@ body {
   width: 100%;
   margin-top: 30px;
   margin: auto;
-  /* text-align: center; */
   background-color: #f4f1ec;
  }
 
@@ -61,7 +60,6 @@ body {
 .new-tweet {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 .new-tweet label {
@@ -188,6 +186,7 @@ textarea {
     display: flex;
     flex-direction: row;
     padding: 35px;
+    padding-top: 125px;
   }
   .all-things-tweet {
     width: 66.7vw;
@@ -196,8 +195,5 @@ textarea {
   }
 }
 
-@media only screen and (max-width: 1024px) {
- 
-}
 
 
