@@ -26,11 +26,16 @@ body {
  */
 
  main {
-  width: 90%;
+  width: 100%;
   margin-top: 30px;
   margin: auto;
   /* text-align: center; */
   background-color: #f4f1ec;
+ }
+
+ .all-things-tweet {
+   width: 90%;
+   margin: auto;
  }
 
  /* All new tweet styling: */
@@ -48,7 +53,7 @@ body {
   border-bottom: solid 3px;
   columns: 80;
   font-size: 15px;
-  width: 500px;
+  width: auto;
   min-height: 30px;
 }
 
@@ -56,7 +61,7 @@ body {
 .new-tweet {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .new-tweet label {
@@ -177,5 +182,22 @@ textarea {
   color: goldenrod;
 }
 
+
+@media only screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    padding: 35px;
+  }
+  .all-things-tweet {
+    width: 66.7vw;
+    margin-top: 40px;
+    margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+ 
+}
 
 

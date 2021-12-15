@@ -27,3 +27,22 @@ header div h4 {
 header div a {
   font-weight: lighter;
 }
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  header {
+   height: 225px;
+   width: 33.3vw;
+   margin-right: 50px;
+   margin-top: 70px;
+  }
+
+  header .name {
+    padding-bottom: 20px;
+  }
+  
+}
+
+@media only screen and (max-width: 1024px) {
+  
+}
