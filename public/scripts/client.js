@@ -69,6 +69,7 @@ $(document).ready(function() {
          loadTweets();
       });
     }
+    
   })
 //renders tweets from JSON in /tweets url
   function loadTweets() {
@@ -77,8 +78,14 @@ $(document).ready(function() {
       renderTweets(res.reverse());
       $("#tweet-area").val("");
       console.log("GET request successfull!");
-    })
+    }).done(function() {
+      $('#tweet-area').val('');
+      $('#counter').html(140);
+      $('#error-msg').slideUp();
+      $(".submit-tweet").trigger("reset");
+    });
   }
   loadTweets();
+
 });
 
